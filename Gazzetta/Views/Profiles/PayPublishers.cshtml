@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Gazzetta.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Pay Publishers";
+}
+
+<h2>Make Payments</h2>
+<table id="Pay" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Amount</th>
+        <th>Pay</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var appUser in Model)
+    {
+        <tr>
+            <td>@appUser.Name</td>
+            <td>@appUser.Email</td>
+            <td>@appUser.PhoneNumber</td>
+            <td>@appUser.Payable Br</td>
+            <td>
+                @*@Html.ActionLink("Pay", "TransferTask", "HelloCash", new { userId = appUser.Id }, null)*@
+                <button data-user-id="@appUser.Id" class="btn btn-sm btn-link js-Pay">Pay</button>
+            </td>
+            
+        </tr>
+
+     }
+</tbody>
+</table>
+

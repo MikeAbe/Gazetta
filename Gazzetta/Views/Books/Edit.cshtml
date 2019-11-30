@@ -1,0 +1,275 @@
+﻿@using System.Web.DynamicData
+@using System.Web.Mvc.Html
+@model Gazzetta.Models.Book
+
+@{
+    ViewBag.Title = "Publish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var base64 = Convert.ToBase64String(Model.Publication.Thumbnail);
+    var imgsrc = String.Format("data:image/png;base64,{0}", base64);
+}
+<div class="col-md-6 col-lg-push-1 ">
+    <h2 align="left">Modify Book Information</h2>
+    @using (Html.BeginForm("ReplaceCover", "Books", new { id = @Model.Id }, FormMethod.Post, new { enctype = "multipart/form-data", id = "coverForm" }))
+    {
+        <img src="@imgsrc" style="height: 450px; width: 300px;" id="cover" />
+        <input class="cover-input" name="cover" type="file" onchange="readURL(this);" />
+        <button type="submit" class="btn btn-sm btn-info">Replace Cover</button>
+
+    }
+
+</div>
+
+
+<div class="col-md-6 col-lg-push-1 " style="margin-top: 48px;">
+    @using (Html.BeginForm("Edit", "Books", null, FormMethod.Post, new { enctype = "multipart/form-data", id = "uploadForm" }))
+    {
+
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Publication.Name)
+            @Html.TextBoxFor(m => m.Publication.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Author)
+            @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Publication.Language)
+            @Html.TextBoxFor(m => m.Publication.Language, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.BookCategory)
+            @Html.EnumDropDownListFor(model => model.BookCategory, Model.Publication.Category, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.BookCategory)
+
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Publication.Description)
+            @Html.TextBoxFor(m => m.Publication.Description, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Blurb)
+            @Html.TextBoxFor(m => m.Blurb, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Publication.Tags)
+            @Html.TextBoxFor(m => m.Publication.Tags, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Publication.Tags)
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Publication.Price)
+            @Html.TextBoxFor(m => m.Publication.Price, new { @class = "form-control", @min = "1" })
+        </div>
+        <div class="form-group col-md-10">
+            @Html.LabelFor(m => m.Publication.Publisher)
+            @Html.TextBoxFor(m => m.Publication.Publisher, new { @class = "form-control" })
+        </div>
+        @Html.HiddenFor(m => m.Id)
+        @Html.AntiForgeryToken()
+        <div class="form-group col-md-10">
+
+
+            <input type="file" name="upload" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected" />
+            <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg> <span>Choose a file&hellip;</span></label>
+            <div>
+                <button type="submit" class="btn btn-primary">
+                    Save
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+        @*<button type="submit" class="btn btn-danger" formaction=@Url.Action("Delete") formmethod="post">
+                Delete
+            </button>*@
+
+    }
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var iSize = input.files[0].size / 1024;
+                iSize = (Math.round((iSize / 1024) * 100) / 100); // in MB
+                var type = input.files[0].type;
+                if (iSize > 1) {
+                    $("#coverForm").get(0).reset();
+                    bootbox.alert("The maximum file size allowed is 1MB. Your file is " + iSize + "MB");
+                    return;
+
+                } else {
+                    if (type.match('image/png') || type == "image/jpeg" || type == "image/pjpeg") {
+
+                        console.log(type);
+                        var reader = new FileReader();
+                        var re = new FileReader();
+                        re.onloadend = function (e) {
+                            var arr = (new Uint8Array(e.target.result)).subarray(0, 4);
+                            var header = '';
+                            for (var i = 0; i < arr.length; i++) {
+                                header += arr[i].toString(16);
+                            }
+                            console.log(header);
+                            if (header == '89504e47' ||//png
+                                header == 'ffd8ffe0' ||//jpeg
+                                header == 'ffd8ffe1' ||//jpeg
+                                header == 'ffd8ffe2' ||//jpeg
+                                header == 'ffd8ffe3' ||//jpeg
+                                header == 'ffd8ffe8'   //jpeg
+                            ) {
+                                console.log('m');
+                                reader.onload = function (e) {
+
+                                    $('#cover')
+                                        .attr('src', e.target.result)
+                                        .width(300)
+                                        .height(450);
+                                };
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                        re.readAsArrayBuffer(input.files[0]);
+
+
+
+                    } else {
+                        $("#coverForm").get(0).reset();
+                        bootbox.alert("The file format must be in jpeg or png format");
+                        return;
+                    }
+
+
+                }
+
+
+            }
+        }
+    </script>
+
+
+    <script>
+
+        $('.inputfile').each(function () {
+            var $input = $(this),
+                $label = $input.next('label'),
+                labelVal = $label.html();
+
+            $input.on('change',
+                function (e) {
+                    var fileName = '';
+                    var iSize = this.files[0].size / 1024;
+                    var MIME = this.files[0].mimeType;
+                    var type = this.files[0].type;
+                    var file = e.target.files[0];
+                    console.log("Type " + type);
+                    console.log("MIME " + MIME); // unreliable
+                    if (iSize / 1024 > 1 && (type.match('application/pdf') || type == "application/epub+zip")) {
+                        console.log("something");
+                        if (((iSize / 1024) / 1024) > 1) {
+                            iSize = (Math.round(((iSize / 1024) / 1024) * 100) / 100);
+                            $("#uploadForm").get(0).reset();
+                            bootbox.alert("The maximum file size allowed is 30MB. Your file is " + iSize + "GB");
+                            $('#file-2').val('');
+                            $label.html(labelVal);
+                            return;
+
+                        } else {
+                            iSize = (Math.round((iSize / 1024) * 100) / 100);
+                            if (iSize > 29) {
+                                $("#uploadForm").get(0).reset();
+                                bootbox.alert("The maximum file size allowed is 30MB. Your file is " +
+                                    iSize +
+                                    "MB");
+                                $label.html(labelVal);
+                                return;
+
+                            } else {
+                                var fileReader = new FileReader();
+                                fileReader.onload = function (ev) {
+                                    var int32View = new Uint8Array(ev.target.result);
+                                    // file signatures of epub and pdf inspecting the first 4 bytes of the byte array
+                                    // in the future, do this check on server-side also. But for now i deem this sufficient
+                                    if (int32View.length > 4 &&
+                                        (
+                                            (int32View[0] == 0x50 && //hex representations of the byte
+                                                    int32View[1] == 0x4b && //hex representations of the byte
+                                                    int32View[2] == 0x03 && //hex representations of the byte
+                                                    int32View[3] == 0x04) || //hex representations of the byte
+                                                (int32View[0] == 0x25 && //hex representations of the byte
+                                                    int32View[1] == 0x50 && //hex representations of the byte
+                                                    int32View[2] == 0x44 && //hex representations of the byte
+                                                    int32View[3] == 0x46) //hex representations of the byte
+                                        )
+                                    ) {
+                                        console.log(
+                                            int32View[0]); // This will actually print the base 10 representation of the hex above
+                                        console.log(int32View[1]);
+                                        console.log(int32View[2]);
+                                        console.log(int32View[3]);
+
+                                        if (e.target.value)
+                                            fileName = e.target.value.split('\\').pop();
+
+                                        if (fileName) {
+                                            $label.find('span').html(fileName);
+
+
+                                        } else {
+                                            $label.html(labelVal);
+                                        }
+
+
+                                    } else {
+                                        $label.html(labelVal);
+                                        bootbox.alert("It appears your file is neither in PDF nor in EPub format ");
+                                        $("#uploadForm").get(0).reset();
+                                        return;
+
+                                    }
+                                };
+                                fileReader.readAsArrayBuffer(file);
+
+
+                            }
+
+                        }
+                    } else {
+                        if (!type.match('application/pdf') || !type.match('application/epub+zip')) {
+                            $label.html(labelVal);
+                            $("#uploadForm").get(0).reset();
+                            bootbox.alert("Only PDF and EPub file formats are allowed!!");
+
+                        }
+                        //                        if (e.target.value )
+                        //                            fileName = e.target.value.split('\\').pop();
+                        //                        if (fileName && (type.match('application/pdf')|| type.match('application/epub+zip')))
+                        //                        {
+                        //                            $label.find('span').html(fileName);
+                        //                        }
+                        //                        else
+                        //                        {
+                        //                            $label.html(labelVal);
+                        //                        }
+                    }
+
+                });
+
+            // Firefox bug fix
+            $input
+                .on('focus', function () { $input.addClass('has-focus'); })
+                .on('blur', function () { $input.removeClass('has-focus'); });
+        });
+    </script>
+}
+

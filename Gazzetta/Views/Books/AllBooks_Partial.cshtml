@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Gazzetta.Models.Book>
+@{
+    ViewBag.Title = "All Books";
+  
+}
+
+<h2>All Books</h2>
+
+<table id="books" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Language</th>
+            <th>Owner</th>
+            <th>Purchased</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(book.Publication.Name, "Edit", "Books", new { id = book.Id }, null)</td>
+                <td>@book.Author</td>
+                <td>@book.Publication.Category</td>
+                <td>@book.Publication.Price ETB</td>
+                <td>@book.Publication.Language</td>
+                <td>@book.Owner.UserName</td>
+                <td>@book.Publication.Downloaded Times</td>
+                <td><button data-book-id="@book.Id" class="btn btn-sm btn-link js-delete">Delete</button></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+@*
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+
+            var table = $("#books").DataTable();
+
+            $("#books ").on("click",".js-delete",function() {
+                var button = $(this);
+                bootbox.confirm("Do you really want to delete this?",
+                    function(result) {
+                        if (result) {
+                            $.ajax({
+                                url: "Delete" + "/" + button.attr("data-book-id"),
+                                success: function() {
+//                                table.row(button.parents("tr")).remove().draw();
+                                    table.row(button.parents("tr")).remove().draw();
+                                }
+                            });
+
+                        }
+
+                    });
+
+            });
+
+        });
+
+
+    </script>
+}
+*@
+
+
+
+
+
+
+
+
+

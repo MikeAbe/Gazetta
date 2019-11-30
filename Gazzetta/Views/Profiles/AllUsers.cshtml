@@ -1,0 +1,73 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Gazzetta.Models
+@using Microsoft.Ajax.Utilities
+@using Microsoft.AspNet.Identity
+@model IEnumerable<Gazzetta.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>All Users</h2>
+
+<table id="users" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Purchases</th>
+        <th>Publications</th>
+        <th>Status</th>
+        <th>Delete</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var appUser in Model)
+    {
+        <tr>
+            <td>@appUser.Name</td>
+            <td>@appUser.Email</td>
+            <td>@appUser.PhoneNumber</td>
+            <td>
+                @Html.ActionLink("Purchases", "UserPurchases", "Profiles", new { userId = appUser.Id }, null)
+
+                @*<button data-u-id="@appUser.Id" class="btn btn-sm btn-link purchbtn">Purchases</button>*@
+                @*@Html.ActionLink("Purchases", "UserPurchases", new {userId=@appUser.Id }, new { @class = "purchbtn" })*@
+            
+
+            </td>
+       
+            <td>
+                @Html.ActionLink("Publications", "UserPublications", "Profiles", new { userId = appUser.Id  }, null)
+            </td>
+            
+            @if (appUser.IsVerrified)
+            {
+                <td>
+                    @Html.ActionLink("Verified", "VerifyPublishers", "Profiles", new { publisherId = appUser.Id }, null)
+                    <img style="width: 30px; height: 30px;" src="~/Content/Images/CertifiedVerified.png" />
+
+                    
+                </td>
+            }
+            else
+            {
+                <td>@Html.ActionLink("Regular","VerifyPublishers","Profiles", new {publisherId = appUser.Id}, null)</td>
+
+            }
+           
+            <td><button data-user-id="@appUser.Id" class="btn btn-sm btn-link js-delete">Delete</button></td>
+
+            
+
+
+            
+
+        </tr>
+    }
+    </tbody>
+
+</table>
+

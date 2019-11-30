@@ -1,0 +1,61 @@
+﻿@model Gazzetta.Models.Book
+
+@{
+    ViewBag.Title = "Publish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Modify Your Book</h2>
+
+@using (Html.BeginForm("Edit", "Customers" ,null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Name)
+        @Html.TextBoxFor(m => m.Publication.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Author)
+        @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Language)
+        @Html.TextBoxFor(m => m.Publication.Language, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Category)
+        @Html.TextBoxFor(m => m.Publication.Category, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Description)
+        @Html.TextBoxFor(m => m.Publication.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Blurb)
+        @Html.TextBoxFor(m => m.Blurb, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Price)
+        @Html.TextBoxFor(m => m.Publication.Price, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Publisher)
+        @Html.TextBoxFor(m => m.Publication.Publisher, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Publication.Content )
+        
+        <input type="file" name="upload" />
+    </div>
+
+   @Html.HiddenFor(m => m.Id)
+
+    <button type="submit" class="btn btn-primary">
+        Update
+    </button>
+    <button type="submit" class="btn btn-danger" formaction=@Url.Action("Delete") formmethod="post" >
+        Delete
+    </button>
+ 
+}

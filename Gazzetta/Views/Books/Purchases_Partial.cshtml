@@ -1,0 +1,54 @@
+﻿@model Gazzetta.ViewModels.PurchasesViewModel
+@{
+    ViewBag.Title = "Purchased Books";
+}
+
+<h3><i>All Purchases</i></h3>
+
+<table id="Purch" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Language</th>
+        <th>Type</th>
+        <th>Download</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Books)
+        {
+            <tr class="warning">
+                <td>@Html.ActionLink(book.Publication.Name, "Details", "Books", new { id = book.Id }, null)</td>
+                <td>@book.Author</td>
+                <td>@book.Publication.Category</td>
+                <td>@book.Publication.Price ETB</td>
+                <td>@book.Publication.Language</td>
+                <td>Book</td>
+                <td>@Html.ActionLink("Download","Buy","Books",new {id = book.Id},null)</td>
+
+            </tr>
+        }
+        @foreach (var magazine in Model.Magazines)
+        {
+            <tr class="warning">
+                <td>@Html.ActionLink(magazine.Publication.Name, "Details", "Magazines", new { id = magazine.Id }, null)</td>
+                <td></td>
+                <td>@magazine.Publication.Category</td>
+                <td>@magazine.Publication.Price ETB</td>
+                <td>@magazine.Publication.Language</td>
+                <td>Magazine</td>
+                <td>@Html.ActionLink("Download", "Buy", "Magazines", new { id = magazine.Id }, null)</td>
+
+            </tr>
+
+        }
+    
+    </tbody>
+
+</table>
+
+
+

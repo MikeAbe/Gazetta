@@ -1,0 +1,569 @@
+﻿body {
+	padding-top: 50px;
+	padding-bottom: 0px;
+	background-image: url(../content/Images/beige_paper.png);
+	background-repeat: repeat;
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+/*Validation error indicators for the box and the error message*/
+.field-validation-error {
+	color: red
+}
+
+.input-validation-error {
+	border: 1px solid red
+}
+/*Cool caption */
+.caption-style-1{
+	list-style-type: none;
+	margin: 0px;
+	padding: 15px;
+		
+}
+
+.caption-style-1 li{
+	float: left;
+	padding: 0px;
+	position: relative;
+	overflow: hidden;
+	display: inline;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.caption-style-1 li:hover .caption{
+	opacity: 1;
+	text-align: center;
+
+}
+
+.caption-style-1 img{
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	z-index: 4;
+}
+
+
+.caption-style-1 .caption{
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	-webkit-transition:all 0.45s ease-in-out;
+	-moz-transition:all 0.45s ease-in-out;
+	-o-transition:all 0.45s ease-in-out;
+	transition:all 0.45s ease-in-out;
+
+}
+.caption-style-1 .blur{
+	background-color: rgba(0,0,0,0.65);
+	height: 450.2px;
+	width: 300px;
+	z-index: 5;
+	position: absolute;
+}
+
+.caption-style-1 .caption-text h1{
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.caption-style-1 .caption-text{
+	z-index: 10;
+	color: #fff;
+	position: absolute;
+	width: 300px;
+	height: auto;
+	margin-left: auto;
+	margin-left: auto;
+	text-align: center;
+	top: 180px;
+
+}
+.linkable {
+	z-index: 10;
+	width: 300px;
+	height: 450.2px
+}
+/* Caption ends here*/
+
+
+/*hiding the input*/
+#overriding-bootstrap.inputfile{
+	width:0.1px;
+	height:0.1px;
+	opacity:0;
+	overflow:hidden;
+	position: absolute;	
+	z-index:-1;
+		
+}
+
+/*buttonize the label*/
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label{
+	max-width: 90%;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0.625rem 1.25rem;
+	
+}
+.inputfile + label svg {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	fill: currentColor;
+	margin-top: -0.25em;
+	/* 4px */
+	margin-right: 0.25em;
+	/* 4px */
+}
+
+
+/*Keyboard navigation dotted*/
+#overriding-bootstrap.inputfile:focus + label{
+	outline: -webkit-focus-ring-color auto 5px;
+	outline: 1px dotted #000;
+}
+
+.inputfile-2 + label {
+	color: cornflowerblue;
+	border: 2px solid cornflowerblue ;
+	width: 166px;
+	height: 39px;
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+	color: #2c3e50;
+	border-color: #2c3e50
+}
+
+
+/*Fancy file upload ends here*/
+
+/* Two divs side by side*/
+/*.container {
+	width: 80%;
+	height: 500px;
+	margin: auto;
+	padding: 10px;
+
+}*/
+.one {
+	width: 300px;
+	height: 450px;
+	float: left;
+	padding-left: 0px;
+
+}
+.two {
+	margin-left: 300px;
+	
+}
+/*.one2 {
+	width: 50px;
+	float: left;
+	padding-left: 0px;
+
+}
+.two2 { margin-left: 50px; 
+
+}*/
+
+
+/*Two divs Side by Side ends here*/
+/* Full Width Carousel*/
+.carousel .item {
+	width: 100%;
+	max-height: 600px;
+
+}
+.carousel .item img {
+	width: 100%;
+}
+@media (max-width: 767px) {
+	.block {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+.top-buffer {
+	margin-top: 30px;
+}
+.parent-div {
+	text-align: center;
+}
+.child-div {
+	display: inline-block;
+}
+#homepagefooter {
+	position: fixed;
+	padding-top: 15px;
+	bottom: 0px;
+	color: lavender;
+	background-image: url(../content/Images/lodays.png);
+	text-align: center;
+	width: 100%;
+	height: 109Px;
+	/*margin-top: -3em;*/
+
+}
+.everyFooter {
+	margin-left: 150px;
+	grid-row-start: 2;
+	background-image: url(../content/Images/lodays.png);
+	grid-row-end: 3;
+	color: lavender;
+	height: 109Px;
+	text-align: center;
+	padding-top: 15px;
+
+	
+	
+	
+
+}
+
+
+/*background-color: aliceblue*/
+.bordered-container {
+	background-color:#ffffff;
+	border-top: cornflowerblue 1px solid;
+	border-bottom: cornflowerblue 1px solid;
+	border-right: cornflowerblue 1px solid;
+	border-left: cornflowerblue 1px solid;
+	padding-left: 0px;
+	padding-right: 0px;
+	
+	
+	
+}
+.Broken {
+	width: 400px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+
+}
+#BuyBtn {
+	/*
+	background-color: aliceblue;
+	*/
+	color: cornflowerblue;
+	border: 2px solid cornflowerblue;
+	width: 166px;
+	height: 39px;
+}
+
+.caption-style-2{
+	list-style-type: none;
+	margin: 0px;
+	padding: 15px;
+		
+}
+
+.caption-style-2 li{
+	/*float: left;*/
+	padding: 0px;
+	position: relative;
+	overflow: hidden;
+	display: inline-block; /*was inline*/
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.caption-style-2 li:hover .caption{
+	opacity: 1;
+	text-align: center;
+
+}
+
+.caption-style-2 img{
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	z-index: 4;
+	
+}
+
+
+.caption-style-2 .caption{
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	-webkit-transition:all 0.45s ease-in-out;
+	-moz-transition:all 0.45s ease-in-out;
+	-o-transition:all 0.45s ease-in-out;
+	transition:all 0.45s ease-in-out;
+
+}
+.caption-style-2 .blur{
+	background-color: rgba(0,0,0,0.65);
+	height: 300px;
+	width: 200px;
+	z-index: 5;
+	position: absolute;
+}
+
+.caption-style-2 .caption-text h1{
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.caption-style-2 .caption-text{
+	z-index: 10;
+	color: #fff;
+	position: absolute;
+	width: 200px;
+	height: auto;
+	margin-left: auto;
+	margin-left: auto;
+	text-align: center;
+	top: 100px;
+	overflow-wrap: break-word;
+	overflow: hidden;
+
+}
+/*.linkable {
+	z-index: 10;
+	width: 200px;
+	height: 300.2px
+}*/
+
+.SearchBody {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 109px;
+	background-color:#ffffff;
+	 
+
+}
+.searchResults {
+	margin-left: 15px;
+	margin-right: 0px;
+	margin-top: 20px;
+
+	
+
+}
+.SearchFooter {
+	clear: both;
+	position: absolute;
+	height: 109px;
+	margin-top: -109px;
+	text-align: center;
+}
+.account-breadcrumb {
+	margin-top: 15px;
+}
+#HomeIcon {
+	margin-left: 6px;
+	margin-top: 15px;
+	
+}
+
+/* MIXING IT UP */
+/*.mix {
+	display: none;
+}*/
+.selector:after {
+	/*content: '';*/
+	display: inline-block;
+	width: 100%;
+}
+.controls {
+	padding: 1rem;
+	background:cornflowerblue;
+	
+	font-size: 0.1px;
+}
+
+.controller {
+	position: relative;
+	display: inline-block;
+	width: 2.7rem;
+	height: 2.7rem;
+	background: #2c3e50;
+	cursor: pointer;
+	font-size: 0.1px;
+	color: white;
+	transition: background 150ms;
+}
+
+.controller:hover {
+	background: lavender;
+}
+
+.controller[data-sort]:after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid;
+	border-left: 2px solid;
+	top: calc(50% - 6px);
+	left: calc(50% - 6px);
+	transform:  translateY(1px) rotate(45deg);
+}
+
+.controller[data-sort*=":desc"]:after {
+	transform:  translateY(-4px) rotate(-135deg);
+}
+
+.mixitup-controller-active {
+	/*background: lavender ;*/
+	border-color: crimson;
+}
+
+.mixitup-controller-active[data-filter]:after {
+	background: transparent;
+}
+
+.controller:first-of-type {
+	border-radius: 3px 0 0 3px;
+}
+
+.controller:last-of-type {
+	border-radius: 0 3px 3px 0;
+}
+.mix:before {
+	/*content: '';*/
+	display: inline-block;
+	padding-top: 56.25%;
+}
+
+.mix[data-issue-number]:after {
+	position: absolute;
+	content: attr(data-issue-number);
+	font-size: 1rem;
+	font-weight: bold;
+	color: #aaa;
+	padding: 1rem;
+	width: 200%;                       
+	top: 0;
+	left: 0;
+}
+.butt {
+	background: transparent;
+	border-radius: 0;
+	border: 0;
+	padding: 0;
+
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+
+	user-select: none;
+}
+
+.butt:focus {
+	outline: 0 none;
+}
+
+.butt::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.mix,
+.gap {
+	width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+}
+@media screen and (min-width: 541px) {
+	.mix,
+	.gap {
+		width: calc(100%/3 - (((3 - 1) * 1rem) / 3));
+	}
+}
+@media screen and (min-width: 961px) {
+	.mix,
+	.gap {
+		width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
+	}
+}
+@media screen and (min-width: 1281px) {
+	.mix,
+	.gap {
+		width: calc(100%/5 - (((5 - 1) * 1rem) / 5));
+	}
+}
+
+
+.dropcontrols {
+	padding: 1rem;
+	background: cornflowerblue;
+
+	
+}
+
+.dropcontrols > select {
+	margin-right: .75rem;
+	width: 200px;
+	height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MIXING IT UP */
+
+
+
+
+
+
+

@@ -1,0 +1,471 @@
+﻿@model Gazzetta.Models.Book
+
+@{
+    ViewBag.Title = "Publish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3><i>Start Publishing </i></h3>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a class="tabb-Menu" href="#PublishBook" data-toggle="tab" data_id="1" aria-expanded="true">Book</a></li>
+        <li>@Html.ActionLink("Magazine","Publish","Magazines")</li>
+
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="PublishBook">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @using (Html.BeginForm("SaveBook", "Books", null, FormMethod.Post, new { enctype = "multipart/form-data", id = "uploadForm" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        <div class="container">
+                            <div class="row">
+                                <div class="form-group col-md-10  ">
+                                    @Html.LabelFor(m => m.Publication.Name)
+                                    @Html.TextBoxFor(m => m.Publication.Name, new { @class = "form-control " })
+                                    @Html.ValidationMessageFor(m => m.Publication.Name)
+                                </div>
+
+                                <div class="form-group col-md-10">
+                                    @Html.LabelFor(m => m.Author)
+                                    @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Author)
+                                </div>
+                                <div class="form-group col-md-10">
+                                    @Html.LabelFor(m => m.Publication.Language)
+                                    @Html.TextBoxFor(m => m.Publication.Language, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Publication.Language)
+                                </div>
+
+                               
+                                <div class="form-group col-md-10">
+                                    @Html.LabelFor(m => m.BookCategory)
+                                    @Html.EnumDropDownListFor(model => model.BookCategory,"Please select a category here",new { @class = "form-control" }) 
+                                    @Html.ValidationMessageFor(m=>m.BookCategory)
+                            </div>
+                            <div class="form-group col-md-10">
+                                @Html.LabelFor(m => m.Publication.Tags)
+                                @Html.TextBoxFor(m => m.Publication.Tags, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Publication.Tags)
+                            </div>
+
+                            @*col-md-3 col-sm-6*@
+                                <div class="form-group col-md-10">
+                                    @Html.LabelFor(m => m.Publication.Description)
+                                    @Html.TextAreaFor(m => m.Publication.Description, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Publication.Description)
+
+                                </div>
+                     
+                                <div class="form-group col-md-10">
+                                    @Html.LabelFor(m => m.Publication.Price)
+                                    @Html.ValidationMessageFor(m => m.Publication.Price)
+                                    @Html.TextBoxFor(m => m.Publication.Price, new {@class = "form-control", @min = "1"})
+
+                                 </div>
+
+                                    <div class="form-group col-md-10">
+                                        @Html.LabelFor(m => m.Publication.Publisher)
+                                        @Html.TextBoxFor(m => m.Publication.Publisher, new {@class = "form-control"})
+                                        @Html.ValidationMessageFor(m => m.Publication.Publisher)
+                                        @*<span class="pull-right icon-bar"></span>*@
+
+                                    </div>
+
+                                    @*col-md-3 col-sm-6*@
+                                    <div class="form-group col-md-10">
+                                        @Html.LabelFor(m => m.Blurb)
+                                        @Html.TextAreaFor(m => m.Blurb, new {@class = "form-control"})
+                                        @Html.ValidationMessageFor(m => m.Blurb)
+                                        <span class="help-block">What someone has said about your book</span>
+
+                                    </div>
+
+                                    @*col-md-3 col-sm-6*@
+                                    <div class="form-group col-md-10">
+
+
+                                        <input type="file" name="upload" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected"/>
+                                        <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                                        <div class="">
+                                            <button type="submit" class="btn btn-primary">
+                                                Publish
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    @Html.HiddenFor(m => m.Id)
+                                    @Html.AntiForgeryToken()
+
+
+
+
+                                </div>
+
+
+                    </div>
+
+
+
+
+                    }
+                </div>
+            </div>
+            
+            <div id="ProductsDiv1">
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="PublishMagazine">
+            <div id="ProductsDiv2">
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts{
+@Scripts.Render("~/bundles/jqueryval")
+
+
+
+    <script>
+
+        $('.inputfile').each(function () {
+            var $input = $(this),
+                $label = $input.next('label'),
+                labelVal = $label.html();
+
+            $input.on('change', function (e) {
+                var fileName = '';
+                var iSize = this.files[0].size / 1024;
+                var MIME = this.files[0].mimeType;
+                var type = this.files[0].type;
+                var file = e.target.files[0];
+                var zip = "zip";
+                console.log("Type "+type);
+                console.log("MIME "+MIME); // unreliable
+                console.log("sizeby1024 "+iSize / 1024);
+                if (type == "application/epub+zip" || type.match( "application/pdf")) {
+                    console.log("something");
+                    if ( iSize/1024 > 1 && ((iSize / 1024) / 1024) > 1) {
+                        iSize = (Math.round(((iSize / 1024) / 1024) * 100) / 100);
+                        $("#uploadForm").get(0).reset();
+                        bootbox.alert("The maximum file size allowed is 30MB. Your file is "+iSize + "GB");
+                        $('#file-2').val('');
+                        $label.html(labelVal);
+                        return;
+
+                    } else {
+                        var ss = iSize/1024;
+                        iSize = (Math.round((iSize / 1024) * 100) / 100);
+                        if (iSize > 29 && ss > 1) {
+                            $("#uploadForm").get(0).reset();
+                            bootbox.alert("The maximum file size allowed is 30MB. Your file is "+iSize + "MB");
+                            $label.html(labelVal);
+                            return;
+
+                        } else {
+                            var fileReader = new FileReader();
+                            fileReader.onload = function(ev) {
+                                var int32View = new Uint8Array(ev.target.result);
+                                // file signatures of epub and pdf inspecting the first 4 bytes of the byte array
+                                // in the future, do this check on server-side also. But for now i deem this sufficient
+                                if (int32View.length > 4 &&
+                                    (
+                                        (int32View[0] == 0x50 && //hex representations of the byte
+                                                int32View[1] == 0x4b && //hex representations of the byte
+                                                int32View[2] == 0x03 && //hex representations of the byte
+                                                int32View[3] == 0x04) || //hex representations of the byte
+                                        (int32View[0] == 0x25 && //hex representations of the byte
+                                                int32View[1] == 0x50 && //hex representations of the byte
+                                                int32View[2] == 0x44 && //hex representations of the byte
+                                                int32View[3] == 0x46) //hex representations of the byte
+                                    )
+                                ) {
+                                    console.log(int32View[0]); // This will actually print the base 10 representation of the hex above
+                                    console.log(int32View[1]);
+                                    console.log(int32View[2]);
+                                    console.log(int32View[3]);
+
+                                    if (e.target.value)
+                                        fileName = e.target.value.split('\\').pop();
+
+                                    if (fileName) {
+                                        $label.find('span').html(fileName);
+
+
+                                    } else {
+                                        $label.html(labelVal);
+                                    }
+
+
+                                } else {
+                                    $label.html(labelVal);
+                                    bootbox.alert("It appears your file is neither in PDF nor in EPub format ");
+                                    $("#uploadForm").get(0).reset();
+                                    return;
+
+                                }
+                            };
+                            fileReader.readAsArrayBuffer(file);
+
+
+                        }
+                        
+                    }
+                } 
+                else {
+                    if (type == 'application/epub+zip') console.log("k");
+                        if (!type.match('application/pdf') || !type.match('application/epub+zip')) {
+                            $label.html(labelVal);
+                            $("#uploadForm").get(0).reset();
+                            bootbox.alert("Only PDF and EPub file formats are allowed!!");
+
+                        }
+//                        if (e.target.value )
+//                            fileName = e.target.value.split('\\').pop();
+//                        if (fileName && (type.match('application/pdf')|| type.match('application/epub+zip'))) 
+//                        {
+//                            $label.find('span').html(fileName); 
+//                        }
+//                        else
+//                        {
+//                            $label.html(labelVal);
+//                        }
+                    }
+                
+            });
+
+            // Firefox bug fix
+            $input
+                .on('focus', function () { $input.addClass('has-focus'); })
+                .on('blur', function () { $input.removeClass('has-focus'); });
+        });
+
+        $(".tabb-Menu9").click(function() {
+            $.ajax({
+                url: '@Url.Action("Publish", "Magazines")',
+                //type: "post",
+                dataType: "html",
+                contentType: 'application/json; charset=utf-8',
+                success: function() {
+                    //success
+                    //$('#ProductsDiv2').html(data); //populate the tab content.
+                },
+                error: function() {
+                    alert("error");
+                }
+            });
+
+        });
+        
+
+
+
+
+        
+
+    </script>
+
+    
+    
+    
+    
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+<div class="container">
+    <h2>Publish Your Book</h2>
+</div>
+
+
+@using (Html.BeginForm("SaveBook", "Books", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="row">
+            <div class="form-group col-sm-6 col-md-6 col-md-push-2 col-lg-6 col-lg-push-2  ">
+                @Html.LabelFor(m => m.Publication.Name)
+                @Html.TextBoxFor(m => m.Publication.Name, new { @class = "form-control " })
+                @Html.ValidationMessageFor(m => m.Publication.Name)
+            </div>
+
+            <div class="form-group col-sm-6 col-md-6 col-lg-6 col-lg-pull-1  ">
+                @Html.LabelFor(m => m.Author)
+                @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Author)
+            </div>
+            <div class="form-group col-sm-6 col-md-6 col-md-push-2  col-lg-6 col-lg-push-2">
+                @Html.LabelFor(m => m.Publication.Language)
+                @Html.TextBoxFor(m => m.Publication.Language, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Publication.Language)
+            </div>
+
+            $1$col-md-3 col-sm-6#1#
+            <div class="form-group col-sm-6 col-md-6  col-lg-6 col-lg-pull-1">
+                @Html.LabelFor(m => m.Publication.Category)
+                @#1#Html.DropDownList("Category", new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "Business", Value = "1"},
+                    new SelectListItem {Text = "Entertainment", Value = "2"},
+                    new SelectListItem {Text = "Sports", Value = "3"},
+
+
+                })#1#
+                @Html.TextBoxFor(m => m.Publication.Category, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Publication.Category)
+
+            </div>
+
+            $1$col-md-3 col-sm-6#1#
+            <div class="form-group col-sm-6 col-md-6 col-md-push-2 col-lg-6 col-lg-push-2">
+                @Html.LabelFor(m => m.Publication.Description)
+                @Html.TextBoxFor(m => m.Publication.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Publication.Description)
+
+            </div>
+
+            $1$col-md-3 col-sm-6#1#
+            <div class="form-group col-sm-6 col-md-6 col-lg-6 col-lg-pull-1">
+                @Html.LabelFor(m => m.Publication.Price)
+                @Html.TextBoxFor(m => m.Publication.Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Publication.Price)
+
+            </div>
+
+            $1$col-md-3 col-sm-6#1#
+            <div class="form-group col-sm-6 col-md-6 col-md-push-2 col-lg-6 col-lg-push-2">
+                @Html.LabelFor(m => m.Publication.Publisher)
+                @Html.TextBoxFor(m => m.Publication.Publisher, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Publication.Publisher)
+                $1$<span class="pull-right icon-bar"></span>#1#
+
+            </div>
+
+            $1$col-md-3 col-sm-6#1#
+            <div class="form-group col-sm-6 col-md-6 col-lg-6 col-lg-pull-1 ">
+                @Html.LabelFor(m => m.Blurb)
+                @Html.TextAreaFor(m => m.Blurb, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Blurb)
+                <span class="help-block">What someone has said about your book</span>
+
+            </div>
+
+            $1$col-md-3 col-sm-6#1#
+            <div class="form-group col-sm-6 col-md-6 col-md-push-2  col-lg-6 col-lg-push-2 ">
+
+
+                <input type="file" name="upload" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected" />
+                <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg> <span>Choose a file&hellip;</span></label>
+
+            </div>
+            @Html.HiddenFor(m => m.Id)
+            @Html.AntiForgeryToken()
+            
+            <div class="col-lg-pull-5">
+                <button type="submit" class="btn btn-primary">
+                    Publish
+                </button>
+            </div>
+            
+
+        </div>
+
+        
+        </div>
+        
+ 
+
+
+}
+
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+
+    <script>
+
+
+        $('.inputfile').each(function () {
+            var $input = $(this),
+                $label = $input.next('label'),
+                labelVal = $label.html();
+
+            $input.on('change', function (e) {
+                var fileName = '';
+
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                else if (e.target.value)
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName)
+                    $label.find('span').html(fileName);
+                else
+                    $label.html(labelVal);
+            });
+
+            // Firefox bug fix
+            $input
+                .on('focus', function () { $input.addClass('has-focus'); })
+                .on('blur', function () { $input.removeClass('has-focus'); });
+        });
+
+
+
+
+
+
+
+
+
+    </script>
+
+}
+*@

@@ -1,0 +1,343 @@
+﻿@using Gazzetta.Controllers
+@*@model Gazzetta.Models.IndexViewModel*@
+@model Gazzetta.Models.UserEdit
+
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+<div class="container">
+
+
+    @*<ul class="nav nav-pills account-breadcrumb">
+            <li class="active"><a href="https://bootswatch.com/3/flatly/index.html#">Account</a></li>
+            <li><a href="https://bootswatch.com/3/flatly/index.html#">Purchases</a></li>
+            <li><a href="https://bootswatch.com/3/flatly/index.html#">My publications</a></li>
+
+            <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="https://bootswatch.com/3/flatly/index.html#"> Publish <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://bootswatch.com/3/flatly/index.html#">Book</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://bootswatch.com/3/flatly/index.html#">Magazine</a></li>
+                </ul> </li>
+        </ul>
+        <h2>@ViewBag.Title.</h2>
+
+        <p class="text-success">@ViewBag.StatusMessage</p>
+        <div>
+            <h4>Change your account information</h4>
+            <hr style="border-color: #2c3e50">
+            <dl class="dl-horizontal">
+                <dt>Password:</dt>
+                <dd>
+                    [
+                    @if (Model.HasPassword)
+                    {
+                        @Html.ActionLink("Change your password", "ChangePassword")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Create", "SetPassword")
+                    }
+                    ]
+                </dd>
+                $1$
+                    Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+                     See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                        for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+                     Uncomment the following block after you have set up two-factor authentication
+                #1#
+                $1$
+                    <dt>Phone Number:</dt>
+                    <dd>
+                        @(Model.PhoneNumber ?? "None") [
+                        @if (Model.PhoneNumber != null)
+                        {
+                            @Html.ActionLink("Change", "AddPhoneNumber")
+                            @: &nbsp;|&nbsp;
+                            @Html.ActionLink("Remove", "RemovePhoneNumber")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Add", "AddPhoneNumber")
+                        }
+                        ]
+                    </dd>
+                #1#
+
+            </dl>
+        </div>*@
+    <ul class="nav nav-tabs">
+        <li class="active"><a class="tabb-Menu" href="#Account" data-toggle="tab" data_id="1" aria-expanded="true">Account</a></li>
+        <li><a class="tabb-Menu1" href="#purchases" data-toggle="tab" data_id="2" aria-expanded="false">Purchases</a></li>
+        <li><a class="tabb-Menu2" href="#MyBooks" data-toggle="tab" data_id="3" aria-expanded="false">My Books</a></li>
+        <li><a class="tabb-Menu3" href="#MyMagazines" data-toggle="tab" data_id="4" aria-expanded="false">My Magazines</a></li>
+
+    </ul>
+   
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="Account">
+                
+                
+                @using (Html.BeginForm("EditUser", "Profiles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h2>Account Information.</h2>
+                    <hr style="border-color: #2c3e50; width: 70% "/>
+
+
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Name)
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email)
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m=>m.PhoneNumber,new {@class="col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m=>m.PhoneNumber,new {@class="form-control"})
+                            <span class="help-block">International number format(+2519########)</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-default" />
+                        </div>
+                    </div>
+    
+        
+          
+                }
+                @Html.ActionLink("Change your password", "ChangePassword", new {}, new {@class = "passLink"})
+                <div id="PassChangeDiv">
+
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="purchases">
+                <div id="ProductsDiv2">
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="MyBooks">
+
+                <div id="ProductsDiv3">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="MyMagazines">
+           
+                <div id="ProductsDiv4">
+                </div>
+            </div>
+
+        </div>
+    
+    
+
+
+</div>
+@section scripts{
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $(function() {
+                $(".passLink").click(function() {
+                    event.preventDefault();
+                    $.ajax({
+                        url: '@Url.Action("ChangePassword", "Manage")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#PassChangeDiv').html(data); //populate the tab content.
+                            
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+                $(".tabb-Menu1").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("Purchases", "Books")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv2').html(data); //populate the tab content.
+                            $("#Purch").DataTable({ "bAutoWidth": false });//draw datatable
+                            $("#Purch").on("click",
+                                ".js-expiredbk",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Your Download limit has been reached for this item. Do you want to purchase it again?",
+                                        function(result) {
+                                            if (result) {
+                                                var data = button.attr("data-book-id");
+                                                location.href = "http://localhost:1782/Books/Details?id=" + data;
+//                                                var data = button.attr("data-mag-id");
+//                                                
+//                                                data;
+                                                //location.href = 'google.com';
+//                                                $.ajax({
+//                                                    url: 'Url.Action("Details","Magazines")',
+//                                                    data:{id: button.attr("data-mag-id")}
+//                                                    success: function() {
+//                                                        location.ref= 
+//                                                    }
+                                                    
+                                                // });
+
+                                            }
+
+                                        });
+
+                                });
+                            $("#Purch").on("click",
+                                ".js-expired",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Your Download limit has been reached for this item. Do you want to purchase it again?",
+                                        function(result) {
+                                            if (result) {
+                                                var data = button.attr("data-mag-id");
+                                                location.href = "http://localhost:1782/Magazines/Details?id=" + data;
+//                                                var data = button.attr("data-mag-id");
+//                                                
+//                                                data;
+                                                //location.href = 'google.com';
+//                                                $.ajax({
+//                                                    url: 'Url.Action("Details","Magazines")',
+//                                                    data:{id: button.attr("data-mag-id")}
+//                                                    success: function() {
+//                                                        location.ref= 
+//                                                    }
+                                                    
+                                               // });
+
+                                            }
+
+                                        });
+
+                                });
+                        },
+                        error: function() {
+                            bootbox.alert("error");
+                        }
+                    });
+
+                });
+            });
+            $(function() {
+                $(".tabb-Menu3").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("MyMagazines", "Magazines")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv4').html(data); //populate the tab content.
+                            var memagtable = $("#memags").DataTable({ "bAutoWidth": false }); //draw datatable
+                            $("#memags ").on("click",
+                                ".js-delete",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Do you really want to delete this?",
+                                        function(result) {
+                                            if (result) {
+                                                $.ajax({
+                                                    url: '@Url.Action("Delete","Magazines")',
+                                                    data:{Id: button.attr("data-book-id")},
+                                                    success: function() {
+//                                table.row(button.parents("tr")).remove().draw();
+                                                        memagtable.row(button.parents("tr")).remove().draw();
+                                                    }
+                                                });
+
+                                            }
+
+                                        });
+
+                                });
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+            });
+            $(function() {
+                $(".tabb-Menu2").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("MyBooks", "Books")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv3').html(data); //populate the tab content.
+                            var mebktable = $("#mebooks").DataTable({ "bAutoWidth": false }); //draw datatable
+                            $("#mebooks ").on("click",
+                                ".js-delete",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Do you really want to delete this?",
+                                        function(result) {
+                                            if (result) {
+                                                $.ajax({
+                                                    url: '@Url.Action("Delete","Books")',
+                                                    data:{Id: button.attr("data-book-id")},
+                                                    success: function() {
+//                                table.row(button.parents("tr")).remove().draw();
+                                                        mebktable.row(button.parents("tr")).remove().draw();
+                                                    }
+                                                });
+
+                                            }
+
+                                        });
+
+                                });
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+
+            });
+      
+
+
+        });
+
+
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/jquery-3.3.1.js"></script>*@
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

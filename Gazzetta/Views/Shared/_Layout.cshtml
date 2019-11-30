@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - Gazetta</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+
+	<meta name="description" content="The description of my page" />
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top sidebar-navbar-inverse">
+	<div class="container sidebar-navbar-container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			@Html.ActionLink("Gazetta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li>@Html.ActionLink("Home", "Index", "Home")</li>
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Books <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li>@Html.ActionLink("Books", "Index", "Books")</li>
+						<li>@Html.ActionLink("Autobiography", "SearchByCategory", "Books", new {searchString = "Autobiography"}, null)</li>
+						<li>@Html.ActionLink("Business", "SearchByCategory", "Books", new {searchString = "Business"}, null)</li>
+						<li>@Html.ActionLink("Education", "SearchByCategory", "Books", new {searchString = "Education"}, null)</li>
+						<li>@Html.ActionLink("Fiction", "SearchByCategory", "Books", new {searchString = "Fiction"}, null)</li>
+						<li>@Html.ActionLink("Politics", "SearchByCategory", "Books", new {searchString = "Politics"}, null)</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Magazines <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li>@Html.ActionLink("Magazines", "Index", "Magazines")</li>
+						<li>@Html.ActionLink("Business", "SearchByCategory", "Magazines", new {searchString = "Business"}, null)</li>
+						<li>@Html.ActionLink("Entertainment", "SearchByCategory", "Magazines", new {searchString = "Entertainment"}, null)</li>
+						<li>@Html.ActionLink("General", "SearchByCategory", "Magazines", new {searchString = "General"}, null)</li>
+						<li>@Html.ActionLink("News", "SearchByCategory", "Magazines", new {searchString = "News"}, null)</li>
+						<li>@Html.ActionLink("Politics", "SearchByCategory", "Magazines", new {searchString = "Politics"}, null)</li>
+						<li>@Html.ActionLink("Sports", "SearchByCategory", "Magazines", new { searchString = "Politics" }, null)</li>
+
+					</ul>
+				</li>
+
+			 </ul>
+
+
+			@using (Html.BeginForm("SearchBook", "Books", null, FormMethod.Post, new {@class = "navbar-form navbar-left", role = "search"}))
+			{
+				<div class="form-group">
+					<input name="query" type="text" class="form-control" placeholder="Search here.."/>
+				</div>
+				<button type="submit" class="btn btn-default">Search</button>
+
+			}
+
+
+
+			@Html.Partial("_LoginPartial")
+		</div>
+	</div>
+</div>
+<div class="sidebar-layout">
+
+		<div class="sidebar-aside-content">
+			<!-- Content of sidebar -->
+			<ul class="sidebar-nav">
+				<li>
+					<a href="@Url.Action("Index","Home")">
+						<img Style="width: 68px; height: 60px;margin-bottom: 10px;" id="HomeIcon" src="~/content/Images/WhiteHouse.png" />
+					</a>
+				</li>
+				<li>
+					<a href="@Url.Action("Index","Books")">
+						<img Style="width: 65px; height: 65px;margin-left: 6px;" id="BookSpine" src="~/content/Images/BookSpines.png" />
+					</a>
+				</li>
+				<li>
+					<a href="@Url.Action("Index","Magazines")">
+						<img Style="width: 65px; height: 60px;margin-left: 6px;" id="MagFold" src="~/content/Images/Abovethe Fold.png" />
+					</a>
+				</li>
+				<li>
+					@if (Request.IsAuthenticated)
+					{
+						<a href="@Url.Action("Index","Manage")">
+							<img Style="width: 80px; height: 80px;" src="~/content/Images/WhiteProfile.png"/>
+
+						</a>
+
+					}
+					else
+					{
+						<a href="@Url.Action("Login","Account")">
+							<img Style="width: 80px; height: 80px;" src="~/content/Images/WhiteProfile.png" />
+
+						</a>
+					}
+				   
+				</li>
+				<li>
+					@if (Request.IsAuthenticated)
+					{
+						<a href="@Url.Action("publish", "Books")">
+
+							<img Style="width: 80px; height: 90px;" src="~/content/Images/WhiteQuill.png" />
+						</a>
+					}
+
+					else
+					{
+						<a href="@Url.Action("Login", "Account")">
+
+							<img Style="width: 80px; height: 90px;" src="~/content/Images/WhiteQuill.png" />
+						</a>
+					}
+				</li>
+
+
+			</ul>
+		</div>
+		<div class="container-fluid body-content sidebar-body-content">
+	
+	@RenderBody()
+	
+	@*<hr style="border-color:#2c3e50">*@
+
+	
+</div>
+</div>
+
+<footer  @*style="bottom: 0; position: relative; width: 100%"*@ class="everyFooter" >
+
+	<p class="">© 2018 Copyright: @Html.ActionLink("Gazetta.com", "Index", "Home")</p>
+
+	<p>@Html.ActionLink("About", "About", "Home")</p>
+	<p>@Html.ActionLink("Contact", "Contact", "Home")</p>
+
+</footer>
+@Scripts.Render("~/bundles/lib")
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

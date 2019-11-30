@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Gazzetta.Models.Book>
+
+@{
+    ViewBag.Title = "UserBooks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Books</h2>
+
+
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Language</th>
+        <th>Owner</th>
+            
+    </tr>
+    </thead> 
+    <tbody>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(book.Publication.Name, "Edit", "Customers", new {id = book.Id}, null)</td>
+            <td>@book.Author</td>
+            <td>@book.Publication.Category</td>
+            <td>@book.Publication.Price</td>
+            <td>@book.Publication.Language</td>
+            <td>@book.Owner.UserName</td>
+            
+        </tr>
+    }
+    </tbody>
+    
+</table>
+@foreach (var book in Model)
+{
+    <div class="container">
+        <ul class="caption-style-1">
+            <li>
+                <img src="" alt="">
+                <div class="caption">
+                    <div class="blur"></div>
+                    <div class="caption-text">
+                        <h1>@book.Publication.Name</h1>
+                        <p>@book.Publication.Description</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+}
+
+
+
+

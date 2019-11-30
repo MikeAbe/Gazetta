@@ -1,0 +1,330 @@
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\csc.exe
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\System.Collections.Immutable.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\vbc.exe
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\VBCSCompiler.exe
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\roslyn\VBCSCompiler.exe.config
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Gazzetta.dll.config
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Gazzetta.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Gazzetta.pdb
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Antlr3.Runtime.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\EntityFramework.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\EntityFramework.SqlServer.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Google.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Web.Infrastructure.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Newtonsoft.Json.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Owin.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Helpers.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Mvc.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Optimization.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Razor.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.WebPages.Deployment.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.WebPages.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.WebPages.Razor.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\WebGrease.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Helpers.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Mvc.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Optimization.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Razor.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.WebPages.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.WebPages.Deployment.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.WebPages.Razor.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Antlr3.Runtime.pdb
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Newtonsoft.Json.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\EntityFramework.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\EntityFramework.SqlServer.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Google.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.csprojResolveAssemblyReference.cache
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.dll
+c:\users\mick\documents\visual studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.pdb
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.InitialMigration.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.csproj.GenerateResource.Cache
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.customerToPublication.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.CompositionOverInheritance.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.Modified.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.Polished.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.FileSupport.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.WorkingUpload.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.AddedOwnershipToBooks.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.m.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\Ghostscript.NET.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\Ghostscript.NET.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.workingThumnail.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.testingEPUB.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.MagazineSupportAdded.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\FluentValidation.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\FluentValidation.Mvc.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\FluentValidation.ValidatorAttribute.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.ComponentModel.Primitives.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.ValueTuple.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\FluentValidation.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\FluentValidation.Mvc.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.ValueTuple.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.EpubSupportAdded.resources
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Net.Http.Formatting.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Http.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Http.WebHost.dll
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Net.Http.Formatting.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Http.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\bin\System.Web.Http.WebHost.xml
+C:\Users\Mick\Documents\Visual Studio 2015\Projects\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.issueNumberAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\csc.exe
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\vbc.exe
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\VBCSCompiler.exe
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Gazzetta.dll.config
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Gazzetta.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Gazzetta.pdb
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Antlr3.Runtime.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\EntityFramework.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\EntityFramework.SqlServer.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\FluentValidation.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\FluentValidation.Mvc.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\FluentValidation.ValidatorAttribute.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Ghostscript.NET.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Newtonsoft.Json.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Owin.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.ComponentModel.Primitives.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Net.Http.Formatting.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.ValueTuple.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Helpers.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Http.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Http.WebHost.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Mvc.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Optimization.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Razor.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.WebPages.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.WebPages.Razor.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\WebGrease.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\FluentValidation.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\FluentValidation.Mvc.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Ghostscript.NET.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Net.Http.Formatting.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.ValueTuple.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Helpers.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Http.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Http.WebHost.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Mvc.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Razor.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.WebPages.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.WebPages.Razor.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\System.Web.Optimization.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Antlr3.Runtime.pdb
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Newtonsoft.Json.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\EntityFramework.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\EntityFramework.SqlServer.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.csprojResolveAssemblyReference.cache
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.InitialMigration.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.customerToPublication.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.CompositionOverInheritance.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.Modified.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.Polished.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.FileSupport.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.WorkingUpload.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.AddedOwnershipToBooks.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.m.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.workingThumnail.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.testingEPUB.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.MagazineSupportAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.EpubSupportAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.csproj.GenerateResource.Cache
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.pdb
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.Issue.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.Issue2.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.SeedUsers.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.nameAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.ManyTimesTried.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\PagedList.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\PagedList.Mvc.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\PagedList.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\PagedList.Mvc.xml
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.statusOfPurchaseAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\bin\X.PagedList.dll
+C:\Users\Mick\Desktop\Back\Gazzetta\Gazzetta\obj\Debug\Gazzetta.Migrations.GuidDateTimeDate.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\csc.exe
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\vbc.exe
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\VBCSCompiler.exe
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Gazzetta.dll.config
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Gazzetta.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Gazzetta.pdb
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Antlr3.Runtime.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\EntityFramework.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\EntityFramework.SqlServer.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\FluentValidation.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\FluentValidation.Mvc.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\FluentValidation.ValidatorAttribute.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Ghostscript.NET.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Newtonsoft.Json.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Owin.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\PagedList.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\PagedList.Mvc.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.ComponentModel.Primitives.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Net.Http.Formatting.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.ValueTuple.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Helpers.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Http.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Http.WebHost.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Mvc.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Optimization.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Razor.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.WebPages.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.WebPages.Razor.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\WebGrease.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\X.PagedList.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\FluentValidation.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\FluentValidation.Mvc.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Ghostscript.NET.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\PagedList.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\PagedList.Mvc.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Net.Http.Formatting.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.ValueTuple.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Helpers.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Http.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Http.WebHost.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Mvc.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Razor.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.WebPages.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.WebPages.Razor.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\System.Web.Optimization.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Antlr3.Runtime.pdb
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Newtonsoft.Json.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\EntityFramework.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\EntityFramework.SqlServer.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.csprojResolveAssemblyReference.cache
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.InitialMigration.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.customerToPublication.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.CompositionOverInheritance.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.Modified.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.Polished.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.FileSupport.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.WorkingUpload.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.AddedOwnershipToBooks.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.m.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.workingThumnail.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.testingEPUB.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.MagazineSupportAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.EpubSupportAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.Issue.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.Issue2.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.SeedUsers.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.nameAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.ManyTimesTried.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.statusOfPurchaseAdded.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.GuidDateTimeDate.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.csproj.GenerateResource.Cache
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.pdb
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.PayableandTags.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.IsVerified.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.ClearingUp.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\bin\ByteSize.dll
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.addedOwnIdtoUBUM.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.enumDrop.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.enumPolished.resources
+C:\Users\Mick\Desktop\Back\Gazzetta1\Gazzetta\obj\Debug\Gazzetta.Migrations.tryingToRemoveCatMap.resources

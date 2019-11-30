@@ -1,0 +1,108 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "SearchPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="controls">
+        <button type="button" class="controller butt" data-sort="issue-number:asc">Asc</button>
+        <button type="button" class="controller butt" data-sort="issue-number:desc">Desc</button>
+    </div>
+
+
+<div class="container">
+
+    <div class="searchResults">
+      
+        @using (Html.BeginForm("SearchByTags", "Magazines", null, FormMethod.Get))
+        {
+            <div class="input-group col-sm-8 col-sm-offset-3">
+                <input type="text" name="query" class="form-control" style="width: 280px; max-width: 280px;" placeholder="Search by tags here..."/>
+                <span class="input-group-btn" style="width: 0; display: inline-block;">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                        Go!
+                    </button>
+                </span>
+
+            </div>
+
+        }
+        <div class="mixingItUp">
+            <ul class="caption-style-2 ">
+                @foreach (var book in ViewBag.onePageOfMagazines)
+                {
+                    <li class="mix" data-issue-number="@book.IssueNumber.ToString("MM/dd/yyyy")"  >
+                        <img  Style="width: 200px; height: 300px;" src="@Url.Action("GetThumbnail", new {id = book.Id.ToString()})"/>
+                         <div class="caption ">
+                            <a href="@Url.Action("Details", "Magazines", new {id = book.Id})">
+                                <div class="blur " ></div>
+                                <div class="caption-text"  >
+                                    <h1>@book.Publication.Name</h1>
+                                    <p>Issue Date: @book.IssueNumber.ToString("MM/dd/yyyy")</p>
+                                    <p>@book.Publication.Description</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                
+                }
+
+            </ul>
+        </div>
+     
+        
+    </div>
+
+</div>
+@Html.PagedListPager((IPagedList)ViewBag.onePageOfMagazines, page => Url.Action("Index", new { page }) )
+
+@section scripts
+{
+    
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mixitup.min.js")"></script>
+    <script type="text/javascript">
+
+
+        var containerEl = document.querySelector('.mixingItUp');
+
+        var mixer = mixitup(containerEl, {
+          
+            animation: {
+                effects: 'fade scale stagger(100ms)', // Set a 'stagger' effect for the loading animation
+                duration:1000
+
+            },
+            load: {
+                filter: 'none',// Ensure all targets start from hidden (i.e. display: none;)
+                sort: 'issue-number:desc'
+            }/*,
+            animation: {
+                effects:'fade-rotatez(-180deg)',
+                duration:1000
+            }*/
+            
+            
+        });
+        containerEl.classList.add('mixitup-ready');
+        mixer.show()
+            .then(function() {
+                // Remove the stagger effect for any subsequent operations
+
+                mixer.configure({
+                    animation: {
+                        effects: 'fade scale'
+                    }
+                });
+            });
+
+
+
+    </script>
+}
+
+
+

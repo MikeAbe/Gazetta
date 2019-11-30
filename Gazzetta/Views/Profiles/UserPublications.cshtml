@@ -1,0 +1,58 @@
+﻿@model Gazzetta.ViewModels.PurchasesViewModel
+
+@{
+    ViewBag.Title = "User Publications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3><i>Publications by @ViewBag.user</i></h3>
+<table id="UserPublications" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Language</th>
+        <th>Type</th>
+        <th>Purchased</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model.Books)
+    {
+        <tr class="warning">
+            <td>@Html.ActionLink(book.Publication.Name, "Details", "Books", new { id = book.Id }, null)</td>
+            <td>@book.Author</td>
+            <td>@book.Publication.Category</td>
+            <td>@book.Publication.Price</td>
+            <td>@book.Publication.Language</td>
+            <td>Book</td>
+            <td>@book.Publication.Downloaded</td>
+
+        </tr>
+    }
+    @foreach (var magazine in Model.Magazines)
+    {
+        <tr class="warning">
+            <td>@Html.ActionLink(magazine.Publication.Name, "Details", "Magazines", new { id = magazine.Id }, null)</td>
+            <td></td>
+            <td>@magazine.Publication.Category</td>
+            <td>@magazine.Publication.Price</td>
+            <td>@magazine.Publication.Language</td>
+            <td>Magazine</td>
+            <td>@magazine.Publication.Downloaded</td>
+        </tr>
+
+    }
+    </tbody>
+
+</table>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#UserPublications").DataTable({ "bAutoWidth": false }); //draw datatable
+
+        });
+    </script>
+}

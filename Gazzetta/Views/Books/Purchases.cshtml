@@ -1,0 +1,103 @@
+﻿@using ByteSizeLib
+@using Gazzetta.Models
+@model Gazzetta.ViewModels.PurchViewModel
+<h3><i>Purchases by @ViewBag.user</i></h3>
+@functions
+{
+
+    public string GetMediaTypeFromModel(string MIMETYPE)
+    {
+        return MIMETYPE == "application/epub+zip" ? "Epub" : "Pdf";
+    }
+
+}
+
+<table id="Purch" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Type</th>
+        <th>Purchased by</th>
+        <th>Published by</th>
+        <th>Price</th>
+        <th>Purchase Date</th>
+        <th>File Format</th>
+        <th>File Size</th>
+        <th>Download</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model.UserBooks)
+    {
+        <tr class="info">
+            <td>@Html.ActionLink(book.Book.Publication.Name, "Details", "Books", new { id = book.BookId }, null)</td>
+            <td>Book</td>
+            <td>@book.ApplicationUser.UserName</td>
+            <td>@book.Book.Owner.UserName</td>
+            <td>@book.Book.Publication.Price ETB</td>
+            <td>@book.PurchaseDate.ToShortDateString()</td>
+            <td>@GetMediaTypeFromModel(@book.Book.Publication.MediaType)</td>
+            <td>@ByteSize.FromBytes(book.Book.Publication.Content.Length).ToString()</td>
+            @if (User.IsInRole(RoleName.CanDoAnything))
+            {
+                <td>
+                    -------
+                </td>
+            }
+            else
+            {
+                if (book.Hits > 3)
+                {
+                    <td><button data-book-id="@book.Book.Id" class="btn btn-sm btn-link js-expiredbk" style="color: red !important">Expired</button></td>
+                    //<td>@Html.ActionLink("Expired", "Details", "Magazines", new { id = magaz.Magazine.Id.ToString() }, null)</td>
+                }
+                else
+                {
+                    <td>@Html.ActionLink("Download", "Buy", "Books", new { i = book.UserBookId }, null)</td>
+
+                }
+            }
+
+
+        </tr>
+    }
+    @foreach (var magaz in Model.UserMagazines)
+    {
+        <tr class="info">
+            <td>@Html.ActionLink(magaz.Magazine.Publication.Name, "Details", "Magazines", new { id = magaz.MagazineId.ToString() }, null)</td>
+            <td>Magazine</td>
+            <td>@magaz.ApplicationUser.UserName</td>
+            <td>@magaz.Magazine.Owner.UserName</td>
+            <td>@magaz.Magazine.Publication.Price ETB</td>
+            <td>@magaz.PurchaseDate.ToShortDateString()</td>
+            <td>@GetMediaTypeFromModel(@magaz.Magazine.Publication.MediaType)</td>
+            <td>@ByteSize.FromBytes(magaz.Magazine.Publication.Content.Length).ToString()</td>
+            @if (User.IsInRole(RoleName.CanDoAnything))
+            {
+                <td>
+                    -------
+                </td>
+            }
+            else
+            {
+                if (magaz.Hits > 3)
+                {
+                    <td><button data-mag-id="@magaz.Magazine.Id.ToString()" class="btn btn-sm btn-link js-expired"style="color: red !important">Expired</button></td>
+                    //<td>@Html.ActionLink("Expired", "Details", "Magazines", new { id = magaz.Magazine.Id.ToString() }, null)</td>
+                }
+                else
+                {
+                    <td>@Html.ActionLink("Download", "Buy", "Magazines", new { id = magaz.UserMagazineId }, null)</td>
+
+                }
+            }
+
+
+
+        </tr>
+
+    }
+    </tbody>
+
+</table>
+

@@ -1,0 +1,341 @@
+﻿@model Gazzetta.Models.UserEdit
+
+@{
+    ViewBag.Title = "Admin View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="active"><a class="tabb-Menu" href="#Account" data-toggle="tab" data_id="1" aria-expanded="true">Account</a></li>
+        <li><a class="tabb-Menu1" href="#purchases" data-toggle="tab" data_id="2" aria-expanded="false">Purchases</a></li>
+        <li><a class="tabb-Menu2" href="#AllBooks" data-toggle="tab" data_id="3" aria-expanded="false">All Books</a></li>
+        <li><a class="tabb-Menu3" href="#AllMagazines" data-toggle="tab" data_id="4" aria-expanded="false">All Magazines</a></li>
+        <li><a class="tabb-Menu4" href="#AllUsers" data-toggle="tab" data_id="5" aria-expanded="false">All Users</a></li>
+        <li class="disabled"><a class="tabb-Menu6" href="#Payments" data-toggle="tab" data_id="5" aria-expanded="false">Payments</a></li>
+
+
+
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="Account">
+
+
+            @using (Html.BeginForm("EditUser", "Profiles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h2>Account Information.</h2>
+                    <hr style="border-color: #2c3e50; width: 70% " />
+
+
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Name)
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email)
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                            <span class="help-block">International number format(+2519########)</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-default" />
+                        </div>
+                    </div>
+
+
+
+            }
+            @Html.ActionLink("Change your password", "ChangePassword", new { }, new { @class = "passLink" })
+            <div id="PassChangeDiv">
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="purchases">
+            <div id="ProductsDiv2">
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="AllBooks">
+
+            <div id="ProductsDiv3">
+            </div>
+        </div>
+        <div class="tab-pane fade" id="AllMagazines">
+
+            <div id="ProductsDiv4">
+            </div>
+        </div>
+        <div class="tab-pane fade" id="Payments">
+
+            <div id="ProductsDiv6">
+            </div>
+        </div>
+        <div class="tab-pane fade" id="AllUsers">
+
+            <div id="ProductsDiv5">
+            </div>
+            <div id="UsersPurchases">
+
+            </div>
+            <div id="PurchDivv">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $(function() {
+                $(".passLink").click(function() {
+                    event.preventDefault();
+                    $.ajax({
+                        url: '@Url.Action("ChangePassword", "Manage")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#PassChangeDiv').html(data); //populate the tab content.
+
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+              
+          
+                
+              
+                
+              
+                $(".tabb-Menu1").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("Purchases", "Books")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv2').html(data); //populate the tab content.
+                            $("#Purch").DataTable({ "bAutoWidth": false }); //draw datatable
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+            });
+            $(function() {
+                $(".tabb-Menu3").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("AllMagazines", "Magazines")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv4').html(data); //populate the tab content.
+                            var mtable = $("#magazines").DataTable({ "bAutoWidth": false }); //draw datatable
+                            $("#magazines ").on("click",
+                                ".js-delete",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Do you really want to delete this?",
+                                        function(result) {
+                                            if (result) {
+                                                $.ajax({
+                                                    url: '@Url.Action("Delete","Magazines")' ,
+                                                    data:{Id: button.attr("data-book-id")},
+                                                    success: function() {
+//                                table.row(button.parents("tr")).remove().draw();
+                                                        mtable.row(button.parents("tr")).remove().draw();
+                                                    }
+                                                });
+
+                                            }
+
+                                        });
+
+                                });
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+
+                $(".tabb-Menu4").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("AllUsers", "Profiles")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv5').html(data); //populate the tab content.
+                            var utab = $("#users").DataTable({ "bAutoWidth": false }); //draw datatable
+                            $("#users").on("click",
+                                ".js-delete",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Do you really want to delete this user?",
+                                        function(result) {
+                                            if (result) {
+                                                $.ajax({
+                                                   url: '@Url.Action("DeleteUser","Profiles")',
+                                                   data:{userId: button.attr("data-user-id")},
+                                                    success: function() {
+                                                        utab.row(button.parents("tr")).remove().draw();
+                                                        //table.ajax.reload();
+                                                    }
+                                                });
+
+                                            }
+
+                                        });
+
+                                });
+                          
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+                $(".tabb-Menu6").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("PayPublishers", "Profiles")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv6').html(data); //populate the tab content.
+                            var utab = $("#Pay").DataTable({ "bAutoWidth": false }); //draw datatable
+                            $("#Pay").on("click",
+                                ".js-Pay",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Proceed with the transfer?",
+                                        function(result) {
+                                            if (result) {
+                                                $.ajax({
+                                                    url: '@Url.Action("TransferTask","HelloCash")',
+                                                    data:{userId: button.attr("data-user-id")},
+                                                    success: function() {
+                                                        utab.row(button.parents("tr")).remove().draw();
+                                                        //table.ajax.reload();
+                                                    },
+                                                    error:function() {
+                                                        bootbox.alert("Oops! Something went wrong");
+                                                    }
+                                                });
+
+                                            }
+
+                                        });
+
+                                });
+                          
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+
+
+
+
+
+
+            });
+            $(function() {
+                $(".tabb-Menu2").click(function() {
+                    $.ajax({
+                        url: '@Url.Action("AllBooks", "Books")',
+                        //type: "post",
+                        dataType: "html",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            //success
+                            $('#ProductsDiv3').html(data); //populate the tab content.
+                            var btable = $("#books").DataTable({ "bAutoWidth": false }); //draw datatable
+                            $("#books ").on("click",
+                                ".js-delete",
+                                function() {
+                                    var button = $(this);
+                                    bootbox.confirm("Do you really want to delete this?",
+                                        function(result) {
+                                            if (result) {
+                                                $.ajax({
+                                                    url: '@Url.Action("Delete","Books")',
+                                                    data:{Id: button.attr("data-book-id")},
+                                                    success: function() {
+                                                        btable.row(button.parents("tr")).remove().draw();
+                                                    }
+                                                });
+
+                                            }
+
+                                        });
+
+                                });
+                        },
+                        error: function() {
+                            alert("error");
+                        }
+                    });
+
+                });
+
+            });
+
+
+
+        });
+
+
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/jquery-3.3.1.js"></script>*@
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
+
+

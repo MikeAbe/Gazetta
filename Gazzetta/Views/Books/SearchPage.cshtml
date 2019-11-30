@@ -1,0 +1,140 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "SearchPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@functions
+{
+
+    public string GetClassNameFromModel(string category)
+    {
+        return category;
+    }
+
+}
+<div class="dropcontrols">
+    <select class="select-filter">
+        <option value="all">All</option>
+        <option value=".Autobiography">Autobiography</option>
+        <option value=".Business">Business</option>
+        <option value=".Education">Education</option>
+        <option value=".Fiction">Fiction</option>
+        <option value=".Politics">Politics</option>
+        <option value=".Religion">Religion</option>
+    </select>
+
+</div>
+<div class="container">
+    <div id ="sortCat">
+        
+
+    </div>
+    <div class="searchResults">
+
+        @using (Html.BeginForm("SearchByTags", "Books", null, FormMethod.Get))
+        {
+
+            <div class="input-group col-sm-8 col-sm-offset-3 " >
+                <input type="text" name="query" class="form-control" style="width: 280px; max-width: 280px;" placeholder="Search by tags here..."/>
+                <span class="input-group-btn" style="width: 0; display: inline-block;">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                        Go!
+                    </button>
+                </span>
+                @*<h4 class="" style="display: table-row-group;">Results</h4>*@
+
+            </div>
+
+        }
+
+        <div class="mixingItUp">
+
+            <ul class="caption-style-2">
+                @foreach (var book in ViewBag.onePageOfBooks)
+                {
+
+                    <li class="mix @GetClassNameFromModel(@book.Publication.Category)">
+                        <img Style="width: 200px; height: 300px;" src="@Url.Action("GetThumbnail", new {id = book.Id})"/>
+                        <div class="caption">
+                            <a href="@Url.Action("Details", "Books", new {id = book.Id})">
+                                <div class="blur"></div>
+                                <div class="caption-text">
+                                    <h1>@book.Publication.Name</h1>
+                                    <p>By: @book.Author</p>
+                                    <p>@book.Publication.Description</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    
+
+
+
+
+
+
+
+                }
+            </ul>
+           
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+@Html.PagedListPager((IPagedList)ViewBag.onePageOfBooks, page => Url.Action("Index", new { page }) )
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mixitup.min.js")"></script>
+    <script type="text/javascript">
+        var containerEl = document.querySelector('.mixingItUp');
+        var selectFilter = document.querySelector('.select-filter');
+
+        //var mixer = mixitup(containerEl);
+        var mixer = mixitup(containerEl,
+            {
+                animation: {
+                    effects: 'fade scale stagger(100ms)', // Set a 'stagger' effect for the loading animation
+                    duration:1000
+
+                },
+                load: {
+                    filter: 'none' // Ensure all targets start from hidden (i.e. display: none;)
+                }
+            });
+        containerEl.classList.add('mixitup-ready');
+        mixer.show()
+            .then(function() {
+                // Remove the stagger effect for any subsequent operations
+                mixer.configure({
+                    animation: {
+                        effects: 'fade scale'
+                    }
+                });
+            });
+
+
+        selectFilter.addEventListener('change', function() {
+            containerEl.classList.add('mixitup-ready');
+            var selector = selectFilter.value;
+            animation: {
+                effects: 'fade scale stagger(50ms)'
+            }
+            mixer.filter(selector);
+            
+        });
+
+    </script>
+}
+
+
+

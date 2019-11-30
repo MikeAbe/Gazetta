@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Gazzetta.Models.Book>
+@{
+    ViewBag.Title = "My Books";
+}
+
+<h3><i>My Books</i></h3>
+
+<table id="mebooks" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Language</th>
+            <th>Owner</th>
+            <th>Copies Sold</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr class="Success">
+                <td>@Html.ActionLink(book.Publication.Name, "Edit", "Books", new { id = book.Id }, null)</td>
+                <td>@book.Author</td>
+                <td>@book.Publication.Category</td>
+                <td>@book.Publication.Price Br</td>
+                <td>@book.Publication.Language</td>
+                <td>@book.Owner.Name</td>
+                <td>@book.Publication.Downloaded</td>
+                <td><button data-book-id="@book.Id" class="btn btn-sm btn-link js-delete">Delete</button></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+

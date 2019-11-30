@@ -1,0 +1,158 @@
+﻿@model Gazzetta.Models.Book
+
+@{
+    ViewBag.Title = "Publish";
+}
+
+
+
+    @using (Html.BeginForm("SaveBook", "Books", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+    {
+        @Html.ValidationSummary(true)
+        <div class="container">
+            @*<div class="row">*@
+                <div class="form-group col-md-10  ">
+                    @Html.LabelFor(m => m.Publication.Name)
+                    @Html.TextBoxFor(m => m.Publication.Name, new {@class = "form-control "})
+                    @Html.ValidationMessageFor(m => m.Publication.Name)
+                </div>
+
+                <div class="form-group col-md-10">
+                    @Html.LabelFor(m => m.Author)
+                    @Html.TextBoxFor(m => m.Author, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Author)
+                </div>
+                <div class="form-group  col-md-10">
+                    @Html.LabelFor(m => m.Publication.Language)
+                    @Html.TextBoxFor(m => m.Publication.Language, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Publication.Language)
+                </div>
+
+                @*col-md-3 col-sm-6*@
+                <div class="form-group col-md-10">
+                    @Html.LabelFor(m => m.Publication.Category)
+                    @*@Html.DropDownList("Category", new List<SelectListItem>
+                    {
+                        new SelectListItem { Text = "Business", Value = "1"},
+                        new SelectListItem {Text = "Entertainment", Value = "2"},
+                        new SelectListItem {Text = "Sports", Value = "3"},
+
+
+                    })*@
+                    @Html.TextBoxFor(m => m.Publication.Category, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Publication.Category)
+
+                </div>
+
+                @*col-md-3 col-sm-6*@
+                <div class="form-group col-md-10">
+                    @Html.LabelFor(m => m.Publication.Description)
+                    @Html.TextBoxFor(m => m.Publication.Description, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Publication.Description)
+
+                </div>
+
+                @*col-md-3 col-sm-6*@
+                <div class="form-group col-md-10">
+                    @Html.LabelFor(m => m.Publication.Price)
+                    @Html.TextBoxFor(m => m.Publication.Price, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Publication.Price)
+
+                </div>
+
+                @*col-md-3 col-sm-6*@
+                <div class="form-group col-md-10">
+                    @Html.LabelFor(m => m.Publication.Publisher)
+                    @Html.TextBoxFor(m => m.Publication.Publisher, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Publication.Publisher)
+                    @*<span class="pull-right icon-bar"></span>*@
+
+                </div>
+
+                @*col-md-3 col-sm-6*@
+                <div class="form-group col-md-10">
+                    @Html.LabelFor(m => m.Blurb)
+                    @Html.TextAreaFor(m => m.Blurb, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.Blurb)
+                    <span class="help-block">What someone has said about your book</span>
+
+                </div>
+
+                @*col-md-3 col-sm-6*@
+                <div class="form-group col-md-10">
+
+
+                    <input type="file" name="upload" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected"/>
+                    <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+
+                </div>
+                @Html.HiddenFor(m => m.Id)
+                @Html.AntiForgeryToken()
+
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-primary">
+                        Publish
+                    </button>
+                </div>
+
+
+            </div>
+
+
+//        </div>
+
+
+
+
+    }
+
+
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+
+    <script>
+
+
+        $('.inputfile').each(function () {
+            var $input = $(this),
+                $label = $input.next('label'),
+                labelVal = $label.html();
+
+            $input.on('change', function (e) {
+                var fileName = '';
+
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                else if (e.target.value)
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName)
+                    $label.find('span').html(fileName);
+                else
+                    $label.html(labelVal);
+            });
+
+            // Firefox bug fix
+            $input
+                .on('focus', function () { $input.addClass('has-focus'); })
+                .on('blur', function () { $input.removeClass('has-focus'); });
+        });
+
+
+
+
+
+
+
+
+
+    </script>
+
+}
+
+

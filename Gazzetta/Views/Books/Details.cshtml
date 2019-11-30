@@ -1,0 +1,102 @@
+﻿@using Gazzetta.Models
+@model Book
+@{
+    ViewBag.Title = "Book Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="row top-buffer">
+    <!--Grid column-->
+    <div class="col-md-6 col-lg-push-1 ">
+        <img src="@Url.Action("GetThumbnail", new {id = Model.Id})" style="width: 300px; height: 450px;">
+    </div>
+    <!--Grid column-->
+    <!--Grid column-->
+    <div class="col-md-6 col-lg-push-1 ">
+        <!--Content-->
+        <div>
+            <div>
+                <p class="lead">
+                    <span><b>Title: </b><i>@Model.Publication.Name</i></span>
+                </p>
+                <p class="lead">
+                    <span><b>By: </b><i>@Model.Author</i></span>
+                </p>
+                <p class="lead">
+                    <span><b>Category: </b><i>@Model.Publication.Category</i></span>
+                </p>
+                <p class="lead">
+                    <span><b>File size: </b><i> @ViewBag.length</i><b>  File format:</b><i>@ViewBag.format</i></span>
+                </p>
+                <p class="lead">
+                    <span>
+                        <b>Uploaded by:</b> <i>@Model.Owner.Name</i>
+                        @if (Model.Owner.IsVerrified)
+                        {
+                           
+                            <img style="width: 60px; height: 60px;" src="~/Content/Images/Certifiedverified.png" />
+                            <span>[<em> Verified Publisher </em>]</span>
+                            
+                            
+                        }
+                    </span>
+                </p>
+
+
+            </div>
+            <div class="Broken">
+                <p class="lead"><b>Description</b></p>
+                <p>
+                    @Model.Publication.Description Iradis antauxen boato pafilegojn ni dankon elsendis
+                    por vigle iros mi fortirigis cxirkaux tiun-cxi krom tial mi la al kaponVenas li portempe nagxi --
+                    turko li tre sekvanta blekegoj de maro al al surmaron kiuj por la tial mi 
+                </p>
+            </div>
+
+            <p class="lead">
+                <span><b>Price: </b>@Model.Publication.Price ETB </span>
+            </p>
+
+            <!-- Default input -->
+            <input id="BuyBtn" type="button" value="Buy With HelloCash" onclick="location.href = '@Url.Action("Invoice","HelloCash",new {price= @Model.Publication.Price,book=@Model.Id})'" />
+            @*<button class="btn btn-primary" type="submit">Buy With HelloCash</button>*@
+
+        </div>
+        <!--Content-->
+    </div>
+    <!--Grid column-->
+</div>
+<!--Grid row-->
+<hr style="border-color: #2c3e50; width: 70% ">
+<!--Grid row-->
+
+
+<div class="parent-div">
+    <div class="child-div Broken">
+
+        <h4 class="h4"><b> Additional information </b></h4>
+        <p>
+            @Model.Blurb
+            "Mi de ni gxi haveno en irinta kaj kion mi
+            ricevis ia rigardas min kiam antauxen
+            kiom ja por du"- Some wise old man
+        </p>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

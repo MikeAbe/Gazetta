@@ -1,0 +1,58 @@
+﻿@model Gazzetta.ViewModels.SearchResultsViewModel
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "SearchBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search Results</h2>
+
+<div class="container">
+    <ul class="caption-style-1">
+        @foreach (var book in Model.Books)
+        {
+            <li>
+                <img Style="width: 300px; height: 450.2px;" src="@Url.Action("GetThumbnail", new {id = book.Id})" />
+                <div class="caption">
+                    <a href="@Url.Action("Details","Books",new {id=book.Id})">
+                        <div class="blur"></div>
+                        <div class="caption-text">
+                            <h1>@book.Publication.Name</h1>
+                            <p>By: @book.Author</p>
+                            <p>@book.Publication.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        }
+        @foreach (var magazine in Model.Magazines)
+        {
+            <li>
+                <img Style="width: 300px; height: 450.2px;" src="@Url.Action("GetThumbnail","Magazines", new {id = magazine.Id})" />
+                <div class="caption">
+                    <a href="@Url.Action("Details","Magazines",new {id=magazine.Id})">
+                        <div class="blur"></div>
+                        <div class="caption-text">
+                            <h1>@magazine.Publication.Name</h1>
+                            @*<p>By: @book.Author</p>*@
+                            <p>@magazine.Publication.Description</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        }
+    </ul>
+
+   
+</div>
+page @(Model.Books.PageCount<Model.Books.PageNumber ? 0: Model.Books.PageNumber) of @Model.Books.PageCount
+
+@Html.PagedListPager(Model.Books, page => Url.Action("SearchBook","Books", new { ViewBag.query,page }))
+
+
+@*page @(Model.Books.PageCount<Model.Books.PageNumber ? 0 : Model.Books.PageNumber) of @Model.Books.PageCount
+@Html.PagedListPager(Model.Books,Page => Url.Action("SearchBook","Books"))*@
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("SearchBook","Books",
+    new { page = page}))*@
